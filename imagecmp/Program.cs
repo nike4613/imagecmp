@@ -12,7 +12,7 @@ namespace imagecmp
     {
         static void Main(string[] args)
         {
-            var idir = @"Z:\Users\aaron\Pictures\Saved Pictures\sortbythelols\hent\";
+            var idir = "cmp";
 
             if (args.Length > 0) idir = args[0];
 
