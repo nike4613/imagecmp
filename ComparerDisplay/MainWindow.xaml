@@ -1,0 +1,32 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ComparerDisplay"
+        mc:Ignorable="d"
+        Title="MainWindow">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="484" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="740">
+            <StackPanel x:Name="stackPanel" Orientation="Horizontal" Height="272">
+                <Image x:Name="imagel" Width="{Binding DesiredSize.Width, ElementName=stackPanel}"/>
+                <Image x:Name="imager" Width="{Binding DesiredSize.Width, ElementName=imagel}"/>
+            </StackPanel>
+            <Grid Height="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="246"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button x:Name="keepl" Content="Keep Left" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="227" Height="80" FontSize="20"/>
+                <Button x:Name="keepboth" Content="Keep Both" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="226" Height="80" FontSize="20"/>
+                <Button x:Name="keepr" Content="Keep Right" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="227" Height="80" FontSize="20"/>
+            </Grid>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
