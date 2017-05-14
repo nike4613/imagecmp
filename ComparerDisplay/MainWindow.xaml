@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ComparerDisplay"
         mc:Ignorable="d"
-        Title="Are {0} ant {1} the same?" SizeToContent="Width">
+        Title="Are {0} and {1} the same?" SizeToContent="Width">
     <Grid>
         <Grid HorizontalAlignment="Left" Height="484" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="740">
             <Grid.RowDefinitions>

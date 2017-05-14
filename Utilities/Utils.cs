@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace imagecmp
+namespace Utilites
 {
     public static class Utils
     {
@@ -44,6 +46,21 @@ namespace imagecmp
             // Uri's use forward slashes so convert back to backward slashes
             return relativeUri.ToString().Replace("/", "\\");
 
+        }
+
+        public static Process ProcessCommandLine(string exec, params string[] args)
+        {
+            // Use ProcessStartInfo class
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.CreateNoWindow = false;
+            startInfo.UseShellExecute = false;
+            startInfo.FileName = exec;
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            startInfo.Arguments = string.Join(" ",args);
+
+            Process exeProcess = new Process();
+            exeProcess.StartInfo = startInfo;
+            return exeProcess;
         }
     }
 

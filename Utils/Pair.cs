@@ -1,4 +1,4 @@
-﻿namespace imagecmp
+﻿namespace Utilites
 {
     public class Pair<T>
     {

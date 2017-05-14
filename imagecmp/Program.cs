@@ -1,4 +1,5 @@
 ﻿using System;
+using Utilites;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -44,10 +45,35 @@ namespace imagecmp
 
             foreach (var p in same)
             {
-                strm.WriteLine(p.First + ";=;" + p.Last);
+                strm.WriteLine(p.First + ":=" + p.Last);
             }
 
             strm.Close();
+
+            var proc = Utils.ProcessCommandLine("ComparerDisplay.exe");
+
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.RedirectStandardInput = true;
+
+            proc.Start();
+
+            string sep = ":=";
+
+            var sout = proc.StandardOutput;
+            var sin = proc.StandardInput;
+
+            sin.WriteLine(idir);
+
+            sin.WriteLine(sep);
+
+            foreach (var p in same)
+            {
+                sin.WriteLine(p.First + sep + p.Last);
+            }
+
+            sin.Close();
+
+            proc.WaitForExit();
         }
     }
 }
