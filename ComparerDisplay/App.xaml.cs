@@ -21,8 +21,8 @@ namespace ComparerDisplay
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            var strm = new StreamWriter(new FileInfo("inp.txt").OpenWrite());
-
+            //var strm = new StreamWriter(new FileInfo("inp.txt").OpenWrite());
+            
             string line = "";
 
             RelPath = Console.ReadLine();
@@ -36,12 +36,12 @@ namespace ComparerDisplay
                 SameObjects.Add(new Pair<string>(splits));
             }
 
-            foreach (var p in SameObjects)
+            /*foreach (var p in SameObjects)
             {
                 strm.WriteLine(p);
             }
 
-            strm.Close();
+            strm.Close();*/
 
             StartMain();
         }

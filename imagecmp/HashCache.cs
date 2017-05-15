@@ -160,5 +160,10 @@ namespace imagecmp
 
             return ret;
         }
+
+        public void RemoveFile(string fname)
+        {
+            cache.Remove(fname);
+        }
     }
 }
